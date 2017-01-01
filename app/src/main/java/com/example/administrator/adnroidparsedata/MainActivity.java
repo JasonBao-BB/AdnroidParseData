@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.IntentService;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcel;
 import android.view.View;
 import android.widget.Button;
 
@@ -20,11 +21,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,AnotherActivity.class);
-                //intent.putExtra("data","Data from 1st activity");
-                Bundle bundle = new Bundle();
-                bundle.putString("name","Jason");
-                bundle.putInt("age",19);
-                intent.putExtras(bundle);
+                intent.putExtra("User", new User("Bob",19));
                 startActivity(intent);
             }
         });
