@@ -15,8 +15,11 @@ public class AnotherActivity extends Activity {
 
         Intent intent = getIntent();
         textView = (TextView) findViewById(R.id.dataGetTextView);
-        textView.setText(intent.getStringExtra("data"));
-
+        //textView.setText(intent.getStringExtra("data"));
+        Bundle bundle = intent.getExtras();
+        String name = bundle.getString("name");
+        int age = bundle.getInt("age");
+        textView.setText(String.format("Name is %s, Age is %d",name,age));
     }
 
 

@@ -20,7 +20,11 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,AnotherActivity.class);
-                intent.putExtra("data","Data from 1st activity");
+                //intent.putExtra("data","Data from 1st activity");
+                Bundle bundle = new Bundle();
+                bundle.putString("name","Jason");
+                bundle.putInt("age",19);
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });
